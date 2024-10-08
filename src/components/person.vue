@@ -3,9 +3,12 @@
     <h2>姓名:{{ name }}</h2>
     <h2>年龄:{{ age }}</h2>
     <h2>电话:{{ tel }}</h2>
+    <h2>序列:{{ compot }}</h2>
     <button @click="changename">修改名字</button>
     <button @click="changeage">修改年龄</button>
     <button @click="changetel">修改电话</button>
+    <button @click="changxulie">修改序列</button>
+
 </div>
 </template>
 <script lang="ts">
@@ -15,6 +18,9 @@
 </script>
  <script setup lang="ts">
 import { ref } from 'vue';
+import { computed } from 'vue';
+let list =ref([1,2,3,4,5,6,7,8,9])
+const compot = computed(()=>{return list.value.filter(itme=>itme>5)})
 
 let name = ref('张三')
 let age = 18
@@ -28,6 +34,9 @@ function changeage(){
 function changetel()
 {
   tel='14578555422'
+}
+function changxulie(){
+  list.value.push(1)
 }
 </script>
 <style scoped>
