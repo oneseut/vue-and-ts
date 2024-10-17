@@ -1,4 +1,4 @@
-<script setup lang="ts" >
+<script setup >
 import { isElementAccessChain } from 'typescript';
 import person from './components/person.vue';
 import tablelist from './components/tablelist.vue';

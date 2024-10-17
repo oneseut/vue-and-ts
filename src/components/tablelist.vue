@@ -1,4 +1,4 @@
-<script setup >
+<script setup  >
 import { ref } from 'vue';
 import tablelistfrom from './tablelistfrom.vue';
 const tableData =ref( [
@@ -31,11 +31,14 @@ import {
   Search,
   Star,
 } from '@element-plus/icons-vue'
+
 const deleteRow = (index) => {
   tableData.value.splice(index, 1)
 }
 const eit = ref(null)
+
 const changetable= (row,index)=>{
+  if(eit.value!==null)
   eit.value.open(row,index)
 }
 const dialogVisible=ref(true)
